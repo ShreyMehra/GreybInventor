@@ -42,7 +42,7 @@ class UI:
                 if not attribute:
                     return
                 
-                if not in self.initial_data.columns:
+                if attribute not in self.initial_data.columns:
                     st.write("Please enter correct attribute!")
                 
             self.processed_data = pd.DataFrame(count_and_clean_inventors(self.initial_data, attribute))
