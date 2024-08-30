@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("Top Invenvtors")
+st.title("Top Inventors")
 st.markdown("~Infringement Team GreyB")
 
 @st.cache_resource
