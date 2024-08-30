@@ -41,9 +41,9 @@ class UI:
                 attribute = st.text_input("Enter the Attribute Name: ")
                 if not attribute:
                     return
-                while attribute and attribute not in self.initial_data.columns:
+                
+                if not in self.initial_data.columns:
                     st.write("Please enter correct attribute!")
-                print(attribute)
                 
             self.processed_data = pd.DataFrame(count_and_clean_inventors(self.initial_data, attribute))
             
