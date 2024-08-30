@@ -39,7 +39,7 @@ class UI:
                 attribute = 'Inventor Name'
             else:
                 attribute = st.text_input("Enter the Attribute Name: ")
-                while not attribute and attribute not in self.initial_data.colunms:
+                while attribute and attribute not in self.initial_data.columns:
                     st.write("Please enter correct attribute!")
                 print(attribute)
                 
