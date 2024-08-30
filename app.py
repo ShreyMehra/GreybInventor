@@ -39,9 +39,10 @@ class UI:
                 attribute = 'Inventor Name'
             else:
                 attribute = st.text_input("Enter the Attribute Name: ")
-                while attribute and attribute not in self.initial_data.colunms:
+                while not attribute and attribute not in self.initial_data.colunms:
                     st.write("Please enter correct attribute!")
-            
+                print(attribute)
+                
             self.processed_data = pd.DataFrame(count_and_clean_inventors(self.initial_data, attribute))
             
             self.processed_data = self.processed_data.reset_index()
