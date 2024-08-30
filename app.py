@@ -35,8 +35,14 @@ class UI:
         
         if uploaded_file:
             self.initial_data = pd.read_excel(uploaded_file)
-
-            self.processed_data = pd.DataFrame(count_and_clean_inventors(self.initial_data, 'Inventor Name'))
+            if "Inventor Name" in self.initial_data.columns:
+                attribute = 'Inventor Name'
+            else:
+                attribute = st.text_input("Enter the Attribute Name: ")
+                while attribute and attribute not in self.initial_data.colunms:
+                    st.write("Please enter correct attribute!")
+            
+            self.processed_data = pd.DataFrame(count_and_clean_inventors(self.initial_data, attribute))
             
             self.processed_data = self.processed_data.reset_index()
             self.processed_data.columns = ['Inventor Name', 'Number of Inventions']
