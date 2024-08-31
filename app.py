@@ -6,6 +6,7 @@ import seaborn as sns
 st.title("Top Inventors")
 st.markdown("~Infringement Team GreyB")
 st.markdown("**There might be some discrepancies due to different name structures used(For example, somewhere FirstName MiddleName LastName, somewhere FirstName LastName)**")
+st.markdown("**By default it takes "Inventor Name" as argument else pass you can pass a Column"**")
 
 @st.cache_resource
 def count_and_clean_inventors(df, column_name, delimiter='|'):
