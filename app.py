@@ -10,6 +10,8 @@ st.markdown("**By default it takes 'Inventor Name' as argument else pass you can
 
 @st.cache_resource
 def count_and_clean_inventors(df, column_name, delimiter='|'):
+    df[column_name] = df[column_name].str.replace(r'\s+', ' ', regex=True)
+    
     df[column_name] = df[column_name].str.replace(',', '')
     df[column_name] = df[column_name].str.replace('.', '', regex=False)
 
